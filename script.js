@@ -1,7 +1,7 @@
 
 var size = 16;
 var percent = (1/size)*100 + '%';
-
+var rainbow = false;
 change_size();
 
 function getSize(){
@@ -28,13 +28,38 @@ function change_size(){
         document.querySelector('.container').appendChild(chequer); 
     }
     const chequers = document.querySelectorAll('.chequer');
-    chequers.forEach(square => square.addEventListener('mouseover',hover));
+    chooseMode(chequers);
 
+}
+
+function chooseMode(chequers){
+    if(rainbow){
+        chequers.forEach(square => square.addEventListener('mouseover',hoverRainbow));
+    }
+    else{
+        chequers.forEach(square => square.addEventListener('mouseover',hover));
+    }
 }
 
 function hover(event){
     this.classList.add('hover');
 }
 
+
+function toggleRainbow(){
+    rainbow = !rainbow;
+    reset();
+    change_size();
+}
+
+function hoverRainbow(e){
+    let color = Math.floor(Math.random()*16777215).toString(16);
+    console.log(color);
+    this.style.backgroundColor = '#' + color;
+}
+
 const size_button = document.querySelector('.size');
 size_button.addEventListener('click', getSize);
+
+const rainbowButton = document.querySelector('.rainbow');
+rainbowButton.addEventListener('click',toggleRainbow);

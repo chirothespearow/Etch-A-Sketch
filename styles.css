@@ -30,8 +30,5 @@ h1{
 }
 
 .chequer{
-    /* flex:1; */
-    /* height: 6.25%;
-    width: 6.25%; */
     transition-duration: 0.07s;
 }
