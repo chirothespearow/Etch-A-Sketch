@@ -10,6 +10,7 @@ function getSize(){
     reset();
     size = prompt('Enter the new size:');
     if(size === null){size = 16;}
+    if(size>100){size = 100;}
     percent = (1/size)*100 + '%';
     change_size();
 }
