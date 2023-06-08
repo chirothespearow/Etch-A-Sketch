@@ -1,0 +1,37 @@
+body{
+    display:flex;
+    flex-direction: column;
+    gap:10px;
+}
+
+
+button{
+    padding:auto;
+    margin:auto;
+}
+.container{
+
+    border: 2px solid black;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height:480px;
+    width:480px;
+    margin:auto;
+}
+
+h1{
+    text-align: center;
+}
+
+.hover{
+    background-color: black;
+}
+
+.chequer{
+    /* flex:1; */
+    /* height: 6.25%;
+    width: 6.25%; */
+    transition-duration: 0.07s;
+}
